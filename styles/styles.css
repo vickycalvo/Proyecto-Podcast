@@ -1,0 +1,628 @@
+/* --------------- Estilos globales --------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: 'IBM Plex Mono', monospace;
+}
+
+h1,
+h2,
+del {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: #060A24;
+    letter-spacing: 0px;
+    line-height: 42px;
+}
+
+p {
+    font-size: 14px;
+    color: #060A24;
+    letter-spacing: 0px;
+    line-height: 22px;
+}
+
+.button {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0px;
+    line-height: 22px;
+    color: #060A24;
+    opacity: 100%;
+    text-transform: uppercase;
+    background-color: #00F3BB;
+    text-decoration: none;
+    width: 288px;
+    text-align: center;
+    display: inline-block;
+    padding: 13px;
+}
+
+.container {
+    width: calc(100% - 32px);
+    height: 100%;
+    margin: 0px auto;
+}
+
+.container-big {
+    width: calc(100% - 22px);
+    margin: 0px auto;
+}
+
+
+/* --------------- Header --------------- */
+
+header {
+    background-color: #fcfcfc;
+    position: fixed;
+    height: 44px;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 2;
+}
+
+
+/* agrego estos 44px al body para compensar espacio de header fixed */
+
+body {
+    margin-top: 44px;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+nav input {
+    display: none;
+}
+
+nav .cross {
+    display: none;
+}
+
+header nav label i {
+    height: 14px;
+    width: 14px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+header nav input:checked~label .cross {
+    display: block;
+}
+
+header nav input:checked~label .bars {
+    display: none;
+}
+
+header nav input:checked~ul {
+    display: block;
+}
+
+.lista-menu {
+    display: none;
+    background-color: #0000EC;
+    list-style: none;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    right: 0;
+    top: 44px;
+}
+
+
+/* padding bottom y top 12px para que quien quiera seleccionar
+ la opción puede clickear tanto arriba como abajo de la palabra */
+
+.lista-menu li {
+    padding: 12px 16px;
+}
+
+.lista-menu li a {
+    font-family: 'IBM Plex Mono';
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+    line-height: 28px;
+}
+
+header nav li:first-child {
+    padding-top: 16px;
+}
+
+header nav li:last-child {
+    padding-bottom: 24px;
+}
+
+
+/* para que quede subrayado el seleccionado 
+hasta que el usuario cierre el menu */
+
+.lista-menu li a:hover {
+    text-decoration: underline;
+}
+
+
+/* --------------- Section intro --------------- */
+
+.intro {
+    margin: 51px auto 24px;
+    align-items: center;
+}
+
+.intro p {
+    margin-top: 16px;
+}
+
+.intro p br {
+    display: none;
+}
+
+.intro a {
+    margin-top: 36px;
+}
+
+
+/* --------------- Section episodios --------------- */
+
+#episodios {
+    background: linear-gradient( to bottom, #0000FF, #0000A3);
+    clip-path: polygon(0 3.5%, 100% 0, 100% 96.5%, 0% 100%);
+}
+
+#episodios h2 {
+    color: #ffffff;
+    padding-top: 64px;
+}
+
+.lista-episodios {
+    margin-top: 21px;
+    padding-bottom: 143.5px;
+}
+
+.lista-episodios li {
+    margin-bottom: 11px;
+}
+
+.lista-episodios li iframe {
+    height: 232px;
+    width: 100%;
+}
+
+.lista-episodios li:last-child {
+    margin-bottom: 0px;
+}
+
+
+/* --------------- Section nosotros --------------- */
+
+.photo {
+    width: 100%;
+    height: auto;
+    margin-top: -100px;
+    position: relative;
+}
+
+#nosotros h1 {
+    margin-top: 27px;
+}
+
+#nosotros p {
+    margin-top: 8px;
+}
+
+
+/* --------------- Section entrevistas --------------- */
+
+#entrevistas h2 {
+    margin: 54px auto 14px;
+}
+
+.container-fotos img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+
+/* --------------- Section tópicos --------------- */
+
+#topicos h2 {
+    margin: 48px auto 24px;
+}
+
+.lista-icons {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 42px;
+    text-align: center;
+}
+
+.lista-icons li {
+    width: 100%;
+    margin-bottom: 52px;
+}
+
+.lista-icons li span {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: #060A24;
+    letter-spacing: 0px;
+    display: block;
+    text-align: center;
+    margin-top: 13px;
+}
+
+.lista-icons li:last-child {
+    margin-bottom: 0px;
+}
+
+
+/* --------------- Section novedades --------------- */
+
+.novedades {
+    padding-bottom: 67px;
+    background: linear-gradient( to right, #0000A3, #0000FF);
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+}
+
+.novedades .container {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.novedades h2 {
+    text-align: center;
+    color: #ffffff;
+    padding-top: 64px;
+}
+
+.novedades a {
+    margin-top: 36px;
+}
+
+
+/* --------------- Footer --------------- */
+
+footer {
+    align-items: center
+}
+
+footer p {
+    margin: 24px 46px 16px 47px;
+}
+
+footer .lista-redes {
+    width: calc(100% - 90px);
+    margin: 0px auto 31px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.lista-redes li {
+    color: #060A24;
+    letter-spacing: 0px;
+    list-style: none;
+    margin-right: 30px;
+}
+
+.lista-redes li a {
+    font-size: 16px;
+    line-height: 28px;
+}
+
+.lista-redes li:last-child {
+    margin-right: 0px;
+}
+
+.lista-redes li a {
+    color: #060A24;
+}
+
+.lista-redes li a:visited {
+    color: #060A24;
+}
+
+
+/* -------------------- breakpoint pantalla mediana ------------------- */
+
+@media screen and (min-width:768px) {
+    /* --- Section intro --- */
+    .intro {
+        width: 100vw;
+        margin: 0px;
+        text-align: center;
+    }
+    .intro h1 br {
+        display: none;
+    }
+    .intro p br {
+        display: inline;
+    }
+    /* --- Section episodios --- */
+    #episodios h2 {
+        margin-left: 30px;
+        margin-bottom: 20px;
+    }
+    .lista-episodios {
+        width: calc(100% - 100px);
+        margin: 0px auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 150px;
+    }
+    .lista-episodios li {
+        margin: 0px 10px;
+        list-style: none;
+        width: 30vw;
+        flex-grow: 1;
+    }
+    /* --- Section nosotros --- */
+    #nosotros .container {
+        display: flex;
+    }
+    .photo {
+        width: 40%;
+        height: auto;
+    }
+    #nosotros .container-text {
+        margin-top: 50px;
+    }
+    /* --- Section entrevistas --- */
+    #entrevistas .container-fotos {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+    }
+    .container-fotos li {
+        width: 50%;
+    }
+    /* --- Section tópicos --- */
+    #topicos h2 {
+        text-align: center;
+    }
+    /* --- Footer --- */
+    footer {
+        text-align: center;
+    }
+    footer .lista-redes {
+        width: 50vw;
+    }
+}
+
+
+/* -------------------- breakpoint pantalla grande ------------------- */
+
+@media screen and (min-width:1024px) {
+    /* --------------- Estilos globales --------------- */
+    h1,
+    del {
+        font-size: 64px;
+        line-height: 74px;
+    }
+    h2 {
+        font-size: 48px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .container {
+        width: calc(100% - 400px);
+        height: 100%;
+        margin: 0px auto;
+        max-width: 1040px;
+    }
+    .container-big {
+        width: calc(100% - 200px);
+        margin: 0px auto;
+        max-width: 1240px;
+    }
+    /* --------------- Header --------------- */
+    header {
+        height: 80px;
+        position: fixed;
+    }
+    body {
+        margin-top: 0px;
+    }
+    header .container {
+        width: calc(100% - 200px);
+        max-width: 1440px;
+    }
+    header .logo {
+        height: 36px;
+        width: 36px;
+    }
+    #menu,
+    #label-menu {
+        display: none;
+    }
+    .lista-menu {
+        display: flex;
+        background-color: #ffffff;
+        position: relative;
+        top: 0px;
+        justify-content: space-between;
+    }
+    .lista-menu li {
+        padding: 13px 24px;
+    }
+    header nav li:first-child {
+        padding-top: 13px;
+    }
+    header nav li:last-child {
+        padding-bottom: 13px;
+        padding-right: 0px;
+    }
+    .lista-menu li {
+        background-color: #fcfcfc;
+    }
+    .lista-menu li a {
+        color: #060A24;
+    }
+    .lista-menu li a:hover {
+        font-family: 'IBM Plex Mono-Medium';
+        color: #00F3BB;
+        transition: 0.3s;
+    }
+    .lista-menu li a:active {
+        color: rgba(6, 10, 36, 0.56);
+        text-decoration: line-through;
+    }
+    /* --------------- Section intro --------------- */
+    .intro {
+        margin-top: 200px;
+        text-align: initial;
+    }
+    .intro h1 span {
+        color: #0000EC;
+    }
+    .intro p {
+        margin-top: 0px;
+    }
+    .intro .button {
+        margin-top: 56px;
+        height: 56px;
+        width: 226px;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+    }
+    .intro a:hover {
+        background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+    }
+    /* --------------- Section episodios  --------------- */
+    #episodios {
+        background: linear-gradient( to right, #0000A3, #0000FF);
+        clip-path: polygon(0 10%, 100% 0, 100% 90%, 0% 100%);
+    }
+    #episodios h2 {
+        margin-bottom: 26px;
+        margin-left: auto;
+        padding-top: 186px;
+    }
+    .lista-episodios {
+        width: unset;
+        margin: 26px auto 0px;
+        display: flex;
+        flex-wrap: wrap;
+        padding-bottom: 232.6px;
+    }
+    .lista-episodios li {
+        margin: 0px;
+        width: calc(50% - 36px);
+    }
+    .lista-episodios li iframe {
+        height: 232px;
+    }
+    .lista-episodios li:first-child {
+        margin: 0px 72px 72px 0px;
+    }
+    .lista-episodios li:last-child {
+        margin-left: 72px;
+    }
+    /* --------------- Section nosotros  --------------- */
+    #nosotros .container {
+        display: flex;
+    }
+    .photo {
+        width: 44%;
+        margin-top: -127.5px;
+    }
+    #nosotros .container-text {
+        margin-top: 20px;
+        margin-left: 63px;
+        max-width: 33vw;
+    }
+    #nosotros p {
+        margin-top: 24px;
+    }
+    /* --------------- Section entrevistas  --------------- */
+    #entrevistas h2 {
+        margin: 64px auto 36px;
+    }
+    .container-fotos li {
+        width: 33.33%;
+    }
+    /* --------------- Section tópicos  --------------- */
+    #topicos h2 {
+        margin: 64px auto 69px;
+        text-align: initial;
+    }
+    .lista-icons {
+        flex-direction: row;
+        margin: 0px auto;
+    }
+    .lista-icons li {
+        margin-left: 78px;
+        margin-bottom: 0px;
+    }
+    .lista-icons li:first-child {
+        margin-left: 0px;
+    }
+    /* --------------- Section novedades  --------------- */
+    .novedades {
+        padding-top: 213px;
+        padding-bottom: 167px;
+        clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+    }
+    .novedades .container {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .novedades h2 {
+        color: #ffffff;
+        font-weight: 400;
+        padding: 0px;
+    }
+    .novedades a {
+        font-size: 18px;
+        width: 345px;
+        height: 56px;
+        margin-top: 36px;
+    }
+    /* --------------- Footer  --------------- */
+    footer {
+        justify-content: space-between;
+        text-align: initial;
+        display: flex;
+        flex-direction: row;
+        margin: 36px 100px 31px;
+    }
+    footer p {
+        margin: 0px;
+        display: inline;
+    }
+    footer .lista-redes {
+        width: fit-content;
+        margin: 0px;
+    }
+    .lista-redes p {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .lista-redes li a {
+        font-size: 18px;
+    }
+}
